@@ -36,16 +36,18 @@ function AuthProvider({ children }) {
   async function signIn({ email, password }) {
     try {
       const response = await api.post("/sessions", { email, password });
-      const { user, token } = response.data;
+      const { user, token} = response.data;
 
       localStorage.setItem("@foodexplorer:user", JSON.stringify(user));
       localStorage.setItem("@foodexplorer:token", token);
 
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       setData({ user, token });
-    } catch (error) {
-      if (error.response) {
-        alert(error.response.data.message);
+      
+    } catch (err) {
+      if (err.response) {
+        console.log()
+        alert(err.response.data.message.message.message);
       } else {
         alert("Não foi possível entrar.");
       }

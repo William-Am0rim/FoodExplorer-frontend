@@ -64,12 +64,13 @@ export function Food({ data, isAdmin, isFavorite, updateFavorite, handleDetails,
       }
 
       alert('Prato adicionado ao carrinho!');
-    } catch (error) {
-      if (error.response) {
-        alert(error.response.data.message);
+    
+    } catch (err) {
+      if (err.response) {
+        alert(err.response.data);
       } else {
+        console.log('Erro ao adicionar ao carrinho:', err);
         alert('Não foi possível adicionar ao carrinho.');
-        console.log('Erro ao adicionar ao carrinho:', error);
       }
     } finally {
       setLoading(false);
