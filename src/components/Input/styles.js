@@ -9,7 +9,6 @@ export const Container = styled.div`
   border-radius: 0.5rem;
   
   > input {
-    outline:none;
     height: 4.8rem;
     width: 100%;
     
