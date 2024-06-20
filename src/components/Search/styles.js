@@ -5,6 +5,7 @@ export const Container = styled.div`
   padding-left: 1.4rem;
   flex-grow: 1;
   border-radius: 0.5rem;
+  outline:none;
 
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
@@ -23,10 +24,12 @@ export const Container = styled.div`
 
     &:focus {
       border: none;
+      outline:none;
     }
 
     &:disabled {
       opacity: 0.5;
+      outline:none;
     }
   }
 `;
